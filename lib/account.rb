@@ -12,7 +12,8 @@ class Account
   end
 
   def withdraw(amount)
+    fail "Withdrawal request exceeds account balance of #{balance}" if amount > balance
     @balance -= amount
   end 
-  
+
 end
