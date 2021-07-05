@@ -2,7 +2,10 @@
 
 ## User Stories
 
-
+- As a customer
+  So that I can look after my money
+  I would like to be able to open a bank account
+  
 - As a customer  
   So that I can put money in my bank account  
   I would like to put able to make deposits  
