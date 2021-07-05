@@ -15,4 +15,12 @@ describe Account do
       expect(subject.balance).to eq(5)
     end
   end
+
+  describe '#withdraw' do
+    it 'allows money to be withdrawn from the bank account' do
+      subject.deposit(5)
+      subject.withdraw(3)
+      expect(subject.balance).to eq(2)
+    end
+  end
 end
