@@ -25,7 +25,7 @@ describe Account do
 
     it 'raises an error if requested withdrawal exceeds balance' do
       subject.deposit(5)
-     expect{subject.withdraw(7)}.to raise_error "Withdrawal request exceeds account balance of #{subject.balance}"
+      expect { subject.withdraw(7) }.to raise_error "Withdrawal request exceeds account balance of #{subject.balance}"
     end
   end
 end

@@ -8,12 +8,18 @@ class Account
   end
 
   def deposit(amount)
-   @balance += amount
+    @balance += amount
   end
 
   def withdraw(amount)
-    fail "Withdrawal request exceeds account balance of #{balance}" if amount > balance
+    raise "Withdrawal request exceeds account balance of #{balance}" if exceeds_balance?(amount)
     @balance -= amount
-  end 
+  end
+
+  private
+
+  def exceeds_balance?(amount)
+    amount > balance
+  end
 
 end

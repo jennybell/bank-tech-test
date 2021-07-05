@@ -50,5 +50,9 @@ Run the rspec testing suite from the command line. This will also run the simple
 
   ### Still to deal with:
 
-  - Can't withdraw more than balance
+  
   - Can't deposit or withdraw negative amount or 0
+
+  ### dealt with:
+  
+  - Can't withdraw more than account balance
