@@ -3,19 +3,22 @@
 require_relative 'statement'
 
 class Account
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   OPENING_BALANCE = 0
 
-  
-  def initialize(statement = Statement.new)
+
+  OPENING_TRANSACTIONS = []
+
+    
+  def initialize
     @balance = OPENING_BALANCE
-    @statement = statement
+    @transactions = OPENING_TRANSACTIONS
   end
 
   def deposit(amount)
     @balance += amount
-    @statement.stores_debit_transaction(amount)
+    @transactions << [Time.now.strftime("%d, %m, %y"), "#{amount}", " ", "#{@balance}" ]
   end
 
   def withdraw(amount)
@@ -24,8 +27,10 @@ class Account
     @balance -= amount
   end
 
-  def print_statement
-    @statement.print
+  def print_statement(statement = Statement.new)
+    @statement = statement
+    @transactions = transactions
+    @statement.print_table(transactions)
   end
 
   private

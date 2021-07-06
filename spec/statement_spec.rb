@@ -1,28 +1,16 @@
 require 'statement'
 
 describe Statement do
-  let(:statement) {Statement.new}
+  let(:statement) { Statement.new }
+  let(:transactions) {[["06, 07, 21", "1000", " ", "500"]]}
   describe 'initialize' do
-  it 'initializes with empty transactions' do
-p statement
-    
-    expect(statement.transactions).to be_empty
   end
-end
 
   describe '#print' do
     it 'returns a table' do
       p statement
-      statement.print
+      statement.print_table(transactions)
       expect(statement.table).to be_instance_of(Terminal::Table)
-    end
-  end
-
-  describe '#stores_debit_transaction' do
-    it 'stores a debit transaction' do
-      
-      statement.stores_debit_transaction(23.00)
-      expect(statement.transactions.length).to eq(1)
     end
   end
 
