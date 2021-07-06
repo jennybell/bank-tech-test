@@ -3,7 +3,6 @@
 require 'account'
 
 describe Account do
-
   describe '#initialize' do
     it 'makes an account with a balance of zero' do
       expect(subject.balance).to eq(0)
