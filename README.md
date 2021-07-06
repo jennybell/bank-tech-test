@@ -73,4 +73,9 @@ Run the rspec testing suite from the command line. This will also run the simple
 
   - Started with account class for withdrawal/deposit
   - Statement class extracted to deal with debits, credits and dates. Statement still prints from account class to limit user interaction with the statement class.
-  - Still unsure how to test contents of table - does not respond to include?
+
+  ## Still to work on
+
+  - Tests and mocking
+  - Unsure how to test that the table responds to input eg title, headings
+  - Feature test in irb?

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'statement'
 
 class Account
@@ -6,6 +7,7 @@ class Account
 
   OPENING_BALANCE = 0
 
+  
   def initialize(statement = Statement.new)
     @balance = OPENING_BALANCE
     @statement = statement
@@ -13,6 +15,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    @statement.stores_debit_transaction(amount)
   end
 
   def withdraw(amount)
@@ -22,8 +25,8 @@ class Account
   end
 
   def print_statement
-   @statement.print
-  end 
+    @statement.print
+  end
 
   private
 
