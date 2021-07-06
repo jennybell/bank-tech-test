@@ -40,7 +40,7 @@ Clone this repo and run bundle install from the command line.
 
 - To feature test this application you can run the commands from the feature_test.md from the command line. You will get the following output:
 
-![screenshot](https://raw.githubusercontent.com/jennybell/bank_tech_test/main/featuretest.png)
+![screenshot](https://github.com/jennybell/bank-tech-test/blob/main/featuretest.png)
 
 
 ## User Stories
