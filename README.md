@@ -30,7 +30,7 @@ Run the rspec testing suite from the command line. This will also run the simple
 
 ## User Stories
 
-- As a customer
+- As a customer  
   So that I can look after my money
   I would like to be able to open a bank account
 

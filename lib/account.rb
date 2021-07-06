@@ -3,8 +3,10 @@
 class Account
   attr_reader :balance
 
+  OPENING_BALANCE = 0
+
   def initialize
-    @balance = 0
+    @balance = OPENING_BALANCE
   end
 
   def deposit(amount)
@@ -13,6 +15,7 @@ class Account
 
   def withdraw(amount)
     raise "Withdrawal request exceeds account balance of #{balance}" if exceeds_balance?(amount)
+
     @balance -= amount
   end
 
@@ -21,5 +24,4 @@ class Account
   def exceeds_balance?(amount)
     amount > balance
   end
-
 end
