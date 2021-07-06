@@ -22,7 +22,7 @@ class Account
   end
 
   def print_statement
-   @statement.print(balance)
+   @statement.print
   end 
 
   private

@@ -12,11 +12,12 @@ describe Statement do
     expect(subject.transactions).to be_empty
   end
   
-  # describe '#print' do
-  #   it 'prints the current balance' do
-  #     @account.deposit(5)
-  #     expect(subject.print).to include("5")
-  #   end
+  describe '#print' do
+    it 'returns a table' do
+      subject.print
+      expect(subject.table).to be_instance_of(Terminal::Table)
+    end
+    end
     
   
 

@@ -29,11 +29,11 @@ describe Account do
     end
   end
 
-  describe '#print_statement' do
-  it 'prints the balance of the account' do
-    subject.deposit(5)
-    expect(subject.print_statement).to include("5")
-  end
-  end
+  # describe '#print_statement' do
+  # it 'prints the balance of the account' do
+  #   subject.deposit(5)
+  #   expect(subject.print_statement).to include("5")
+  # end
+  # end
 
 end
