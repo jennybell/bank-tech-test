@@ -28,4 +28,12 @@ describe Account do
       expect { subject.withdraw(7) }.to raise_error "Withdrawal request exceeds account balance of #{subject.balance}"
     end
   end
+
+  describe '#print_statement' do
+  it 'prints the balance of the account' do
+    subject.deposit(5)
+    expect(subject.print_statement).to include("5")
+  end
+  end
+
 end

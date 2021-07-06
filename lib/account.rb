@@ -19,6 +19,10 @@ class Account
     @balance -= amount
   end
 
+  def print_statement
+   "Your balance is: #{balance}"
+  end 
+
   private
 
   def exceeds_balance?(amount)
