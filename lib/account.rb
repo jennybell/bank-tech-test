@@ -1,12 +1,14 @@
 # frozen_string_literal: true
+require_relative 'statement'
 
 class Account
   attr_reader :balance
 
   OPENING_BALANCE = 0
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = OPENING_BALANCE
+    @statement = statement
   end
 
   def deposit(amount)
@@ -20,7 +22,7 @@ class Account
   end
 
   def print_statement
-   "Your balance is: #{balance}"
+   @statement.print(balance)
   end 
 
   private

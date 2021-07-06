@@ -1,3 +1,5 @@
+require_relative 'account'
+
 class Statement
 
   attr_reader :transactions
@@ -6,5 +8,9 @@ class Statement
 
   def initialize
     @transactions = OPENING_TRANSACTIONS
+  end
+
+  def print(balance)
+    "Your current balance is #{balance}"
   end
 end
