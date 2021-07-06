@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 require_relative 'account'
 require 'terminal-table'
 
 class Statement
   attr_reader :table
 
-  def initialize
-   end
+  def initialize; end
 
   def print_table(transactions)
     rows = transactions

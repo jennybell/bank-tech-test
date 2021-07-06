@@ -7,10 +7,8 @@ class Account
 
   OPENING_BALANCE = 0
 
-
   OPENING_TRANSACTIONS = []
 
-    
   def initialize
     @balance = OPENING_BALANCE
     @transactions = OPENING_TRANSACTIONS
@@ -18,13 +16,14 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions << [Time.now.strftime("%d, %m, %y"), "#{amount}", " ", "#{@balance}" ]
+    @transactions << [Time.now.strftime('%d/%m/%y'), ' ', amount.to_s,  @balance.to_s]
   end
 
   def withdraw(amount)
     raise "Withdrawal request exceeds account balance of #{balance}" if exceeds_balance?(amount)
 
     @balance -= amount
+    @transactions << [Time.now.strftime('%d/%m/%y'), amount.to_s, ' ', @balance.to_s]
   end
 
   def print_statement(statement = Statement.new)
