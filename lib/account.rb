@@ -7,9 +7,10 @@ class Account
 
   OPENING_BALANCE = 0
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = OPENING_BALANCE
     @transactions = []
+      @statement = statement
   end
 
   def deposit(amount)
@@ -24,8 +25,8 @@ class Account
     @transactions << "#{Time.now.strftime('%d/%m/%Y')} || || #{format('%.2f', amount)} || #{format('%.2f', @balance)}"
   end
 
-  def print_statement(statement = Statement.new)
-    @statement = statement
+  def print_statement
+  
     @statement.print_table(@transactions)
   end
 

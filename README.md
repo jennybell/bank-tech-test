@@ -38,7 +38,8 @@ Clone this repo and run bundle install from the command line.
 
          rspec
 
-- The feature test runs from the assessment criteria spec file, to test whether the desired output comes from the integration of the two classes.
+- The unit tests appear in the statement_spec.rb and account_spec.rb files
+- The feature test runs from the assessment_criteria.rb file, to test whether the desired output comes from the integration of the two classes.
 
 
 ## User Stories
