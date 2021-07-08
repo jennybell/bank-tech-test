@@ -22,6 +22,14 @@ describe Account do
       account.deposit(5)
       expect(account.balance).to eq(5)
     end
+
+    it 'raises an error if deposit amount is zero' do
+      expect { subject.deposit(0) }.to raise_error "Invalid transaction"
+    end
+
+    it 'raises an error if withdrawal amount is negative' do
+      expect { subject.deposit(-2) }.to raise_error "Invalid transaction"
+    end
   end
 
   describe '#withdraw' do
@@ -43,6 +51,16 @@ describe Account do
     it 'raises an error if requested withdrawal exceeds balance' do
       subject.deposit(5)
       expect { subject.withdraw(7) }.to raise_error "Withdrawal request exceeds account balance of #{subject.balance}"
+    end
+
+    it 'raises an error if withdrawal amount is zero' do
+      subject.deposit(5)
+      expect { subject.withdraw(0) }.to raise_error "Invalid transaction"
+    end
+
+    it 'raises an error if withdrawal amount is negative' do
+      subject.deposit(5)
+      expect { subject.withdraw(-2) }.to raise_error "Invalid transaction"
     end
   end
 end

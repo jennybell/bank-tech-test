@@ -6,6 +6,8 @@ class Account
   attr_reader :balance, :transactions
 
   OPENING_BALANCE = 0
+  MINIMUM_TRANSACTION = 0.01
+
 
   def initialize(statement = Statement.new)
     @balance = OPENING_BALANCE
@@ -14,13 +16,14 @@ class Account
   end
 
   def deposit(amount)
+    raise "Invalid transaction" if invalid_transaction?(amount)
     @balance += amount
     @transactions << "#{Time.now.strftime('%d/%m/%Y')} || #{format('%.2f', amount)} || || #{format('%.2f', @balance)}"
   end
 
   def withdraw(amount)
     raise "Withdrawal request exceeds account balance of #{balance}" if exceeds_balance?(amount)
-
+    raise "Invalid transaction" if invalid_transaction?(amount)
     @balance -= amount
     @transactions << "#{Time.now.strftime('%d/%m/%Y')} || || #{format('%.2f', amount)} || #{format('%.2f', @balance)}"
   end
@@ -34,5 +37,9 @@ class Account
 
   def exceeds_balance?(amount)
     amount > balance
+  end
+
+  def invalid_transaction?(amount)
+    amount < MINIMUM_TRANSACTION
   end
 end
