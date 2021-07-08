@@ -30,7 +30,11 @@ Clone this repo and run bundle install from the command line.
 
  - To print the accoutn statement
 
-        account.print_statement       
+        account.print_statement  
+
+  - This will produce output as per below:
+
+![screenshot](https://github.com/jennybell/bank-tech-test/blob/main/featuretest.png)
 
 ## How to test this application
 
@@ -64,7 +68,6 @@ Clone this repo and run bundle install from the command line.
 
   ### Still to deal with:
 
-  
   - Can't deposit or withdraw negative amount or 0
 
   ### dealt with:
@@ -78,11 +81,8 @@ Clone this repo and run bundle install from the command line.
 
   ## Still to work on
 
-  - Unsure how to test that the table responds to input eg title, headings
-  - Automatic feature test in irb?
-  - Format money correctly
-  - Change order of transactions
-  - Some refactoring
+  - Refactoring for SRP
+  - Format at output, in statement class, not at creation in account class
 
   ## Original specification
 
