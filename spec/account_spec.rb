@@ -13,7 +13,7 @@ describe Account do
     it 'stores a credit transaction' do
       account = Account.new
       account.deposit(5)
-  
+
       expect(account.transactions.length).to eq(1)
     end
 

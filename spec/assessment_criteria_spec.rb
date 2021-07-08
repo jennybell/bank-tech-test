@@ -17,7 +17,7 @@ describe 'Assesment Criteria' do
     account.deposit(2000)
     Timecop.travel(Time.local(2012, 1, 14, 0, 0, 0))
     account.withdraw(500)
-p @transactions
-    expect(account.print_statement(statement)).to eq(printed_statement)
+    p account.transactions
+    expect(account.print_statement(Statement.new)).to eq(printed_statement)
   end
 end
