@@ -64,14 +64,9 @@ Clone this repo and run bundle install from the command line.
   So that I know the state of my finances  
   I would like to be able to view a bank statement showing my balance, deposits and withdrawals along with the date of the transactions
 
-  ## Edge cases
+  ## Edge cases dealt with
 
-  ### Still to deal with:
-
-  - Can't deposit or withdraw negative amount or 0
-
-  ### dealt with:
-  
+  - Can't deposit or withdraw negative or zero amount
   - Can't withdraw more than account balance
 
   ## Process

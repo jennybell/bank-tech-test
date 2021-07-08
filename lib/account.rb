@@ -8,28 +8,28 @@ class Account
   OPENING_BALANCE = 0
   MINIMUM_TRANSACTION = 0.01
 
-
   def initialize(statement = Statement.new)
     @balance = OPENING_BALANCE
     @transactions = []
-      @statement = statement
+    @statement = statement
   end
 
   def deposit(amount)
-    raise "Invalid transaction" if invalid_transaction?(amount)
+    raise 'Invalid transaction' if invalid_transaction?(amount)
+
     @balance += amount
-    @transactions << "#{Time.now.strftime('%d/%m/%Y')} || #{format('%.2f', amount)} || || #{format('%.2f', @balance)}"
+    credit_transaction(amount, @balance)
   end
 
   def withdraw(amount)
     raise "Withdrawal request exceeds account balance of #{balance}" if exceeds_balance?(amount)
-    raise "Invalid transaction" if invalid_transaction?(amount)
+    raise 'Invalid transaction' if invalid_transaction?(amount)
+
     @balance -= amount
-    @transactions << "#{Time.now.strftime('%d/%m/%Y')} || || #{format('%.2f', amount)} || #{format('%.2f', @balance)}"
+    debit_transaction(amount, @balance)
   end
 
   def print_statement
-  
     @statement.print_table(@transactions)
   end
 
@@ -41,5 +41,13 @@ class Account
 
   def invalid_transaction?(amount)
     amount < MINIMUM_TRANSACTION
+  end
+
+  def credit_transaction(amount, balance)
+    @transactions << "#{Time.now.strftime('%d/%m/%Y')} || #{format('%.2f', amount)} || || #{format('%.2f', balance)}"
+  end
+
+  def debit_transaction(amount, balance)
+    @transactions << "#{Time.now.strftime('%d/%m/%Y')} || || #{format('%.2f', amount)} || #{format('%.2f', balance)}"
   end
 end
