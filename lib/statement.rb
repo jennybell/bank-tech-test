@@ -11,5 +11,4 @@ class Statement
     @table = Terminal::Table.new title: 'Statement', headings: %w[Date Credit Debit Balance], rows: transactions
     puts table
   end
-
 end

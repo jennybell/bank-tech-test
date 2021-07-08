@@ -17,15 +17,4 @@ describe Statement do
     end
   end
 
-  # describe '#table_of_transactions' do
-  #   it 'creates table with correct title' do
-  #   @table = instance_double("Terminal::Table")
-  #     subject.table_of_transactions
-  #     expect(@table).to receive(:title).with(:Statement)
-  #   end
-
-  #   it 'creates table with correct headings' do
-  #     expect(@table).to respond_to(:headings).with_keywords(:Date, :Debit, :Credit, :Balance)
-  #   end
-  # end
 end

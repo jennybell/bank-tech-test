@@ -38,9 +38,7 @@ Clone this repo and run bundle install from the command line.
 
          rspec
 
-- To feature test this application you can run the commands from the feature_test.md from the command line. You will get the following output:
-
-![screenshot](https://github.com/jennybell/bank-tech-test/blob/main/featuretest.png)
+- The feature test runs from the assessment criteria spec file, to test whether the desired output comes from the integration of the two classes.
 
 
 ## User Stories
