@@ -7,9 +7,8 @@ class Statement
   attr_reader :table
 
   def print_table(_transactions)
-    puts 'date || credit || debit || balance'
-    _transactions.reverse.each do |transaction|
-      puts transaction
-    end
+   "date || credit || debit || balance" + "\n    "  + _transactions.reverse.join("\n    ")
+  
   end
+
 end
