@@ -74,10 +74,9 @@ Clone this repo and run bundle install from the command line.
   - Started with account class for withdrawal/deposit
   - Statement class extracted to deal with debits, credits and dates. Statement still prints from account class to limit user interaction with the statement class.
 
-  ## Still to work on
+  ## Could be improved
 
-  - Refactoring for SRP
-  - Format at output, in statement class, not at creation in account class
+  - Creation of transaction class to remove responsibility of formatting from account class
 
   ## Original specification
 
