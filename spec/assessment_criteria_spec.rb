@@ -7,9 +7,9 @@ require 'timecop'
 describe 'Assesment Criteria' do
   it 'outputs the statement as in the assessment criteria' do
     printed_statement = "date || credit || debit || balance
-    14/01/2012 || || 500.00 || 2500.00
-    13/01/2012 || 2000.00 || || 3000.00
-    10/01/2012 || 1000.00 || || 1000.00"
+    14/01/2012 ||  || 500.00 || 2500.00
+    13/01/2012 || 2000.00 ||  || 3000.00
+    10/01/2012 || 1000.00 ||  || 1000.00"
     account = Account.new
     Timecop.travel(Time.local(2012, 1, 10, 0, 0, 0))
     account.deposit(1000)

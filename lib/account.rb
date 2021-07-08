@@ -14,14 +14,14 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions << [Time.now.strftime('%d/%m/%y'), ' ', amount.to_s,  @balance.to_s]
+    @transactions << [Time.now.strftime('%d/%m/%Y').to_s,  "#{format('%.2f', amount)}", '', "#{format('%.2f', @balance)}"].join(" || ")
   end
 
   def withdraw(amount)
     raise "Withdrawal request exceeds account balance of #{balance}" if exceeds_balance?(amount)
 
     @balance -= amount
-    @transactions << [Time.now.strftime('%d/%m/%Y'), amount.to_s, ' ', @balance.to_s]
+    @transactions << [Time.now.strftime('%d/%m/%Y').to_s, '', "#{format('%.2f', amount)}",  "#{format('%.2f', @balance)}"].join(" || ")
   end
 
   def print_statement(statement = Statement.new)
